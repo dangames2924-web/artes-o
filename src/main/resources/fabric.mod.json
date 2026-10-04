@@ -1,61 +1,19 @@
-gradle build
-  shell: /usr/bin/bash -e {0}
-  env:
-    JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-    JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-    GRADLE_ACTION_ID: gradle/actions/setup-gradle
-    GRADLE_USER_HOME: /home/runner/.gradle
-    GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
-    GRADLE_BUILD_ACTION_CACHE_RESTORED: true
-    DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
-    DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
-    GITHUB_DEPENDENCY_GRAPH_ENABLED: false
-Starting a Gradle Daemon (subsequent builds will be faster)
-
-> Configure project :
-Fabric Loom: 1.10.5
-Previous process has disowned the lock due to abrupt termination.
-Found existing cache lock file (ACQUIRED_PREVIOUS_OWNER_DISOWNED), rebuilding loom cache. This may have been caused by a failed or canceled build.
-:remapping 51 mods from modImplementation (java-api)
-:remapping 51 mods from modImplementation (java-runtime)
-
-> Task :compileJava NO-SOURCE
-> Task :processResources NO-SOURCE
-> Task :classes UP-TO-DATE
-> Task :jar
-> Task :compileTestJava NO-SOURCE
-> Task :processIncludeJars
-> Task :sourcesJar
-> Task :processTestResources NO-SOURCE
-> Task :testClasses UP-TO-DATE
-> Task :test NO-SOURCE
-> Task :validateAccessWidener NO-SOURCE
-> Task :check UP-TO-DATE
-> Task :remapSourcesJar
-> Task :remapJar FAILED
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':remapJar'.
-> A failure occurred while executing net.fabricmc.loom.task.RemapJarTask$RemapAction
-   > Failed to remap, java.lang.IllegalArgumentException: Cannot nest jars into none mod jar tear_exclusivo-1.0.0.jar
-
-* Try:
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1791074578949.json
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights.
-
-> Get more help at https://help.gradle.org.
-[Incubating] Problems report is available at: file:///home/runner/work/artes-o/artes-o/build/reports/problems/problems-report.html
-
-
-BUILD FAILED in 37s
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
-
-You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
-
-For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
-5 actionable tasks: 5 executed
-Error: Process completed with exit code 1.
+{
+  "schemaVersion": 1,
+  "id": "tear_exclusivo",
+  "version": "1.0.0",
+  "name": "Tear Exclusivo",
+  "description": "Apenas jogadores autorizados podem usar o tear.",
+  "authors": ["Voce"],
+  "license": "MIT",
+  "environment": "server",
+  "entrypoints": {
+    "main": ["com.exemplo.tearexclusivo.TearExclusivo"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
