@@ -6,7 +6,7 @@
   "description": "Apenas jogadores autorizados podem usar o tear.",
   "authors": ["Voce"],
   "license": "MIT",
-  "environment": "server",
+"environment": "*",
   "entrypoints": {
     "main": ["com.exemplo.tearexclusivo.TearExclusivo"]
   },
